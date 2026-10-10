@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<head>
+<title> EduTech Platform - Login </title>
+</head>
+<body>
+
+ <h1 align="center"> EduTech Platform </h1>
+ <h2 align="center"> Login </h2>
+  <p align="center"> Please enter your login details to access your account. Fields marked with * are required. </p>
+
+
+<form action="login_success.html" method="post">
+
+<table align="center">
+<tr>
+<td align="center">
+
+
+
+<fieldset>
+<legend> Login Details </legend>
+
+<table>
+
+<tr>
+ <td> <label for="user_type">User Type *:</label> </td>
+ <td>
+  <select id="user_type" name="user_type" required>
+   <option value=""> -- Select User Type -- </option>
+   <option value="Student"> Student</option>
+   <option value="Instructor"> Instructor </option>
+   <option value="Admin">Admin </option>
+   <option value="Customer Support"> Customer Support </option>
+  </select>
+ </td>
+</tr>
+
+<tr>
+<td> <label for="username"> Username / Email *: </label> </td>
+<td> <input type="text" id="username" name="username" size="30" placeholder="Enter your username or email" required> </td>
+</tr>
+
+<tr>
+ <td> <label for="password">Password *: </label> </td>
+ <td> <input type="password" id="password" name="password" size="30" required> </td>
+</tr>
+</table>
+</fieldset>
+<br>
+
+<input type="submit" value="Login">
+<input type="reset" value="Clear Form">
+
+<p> Do not have an account? <a href="instructor_registration.html"> Register. </a></p>
+
+</td>
+</tr>
+</table>
+
+</form>
+
+</body>
+</html>
