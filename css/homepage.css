@@ -6,8 +6,10 @@ body {
 
 #header {
     background-color: #1D4ED8;
-    padding: 5px 5px;
+    padding: 5px;
     text-align: center;
+    border-bottom: 3px solid #77bfef;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 #header h1 {
@@ -25,6 +27,7 @@ nav {
     display: flex;
     gap: 15px;
     padding: 10px 15px 10px 30px;
+    overflow: auto
 }
 
 nav a {
@@ -76,6 +79,7 @@ h2 {
     border-radius: 8px;
     padding: 12px 20px;
     transition: background-color 0.3s;
+    display: inline-block;
 }
 
 .buttons:hover {
@@ -133,8 +137,10 @@ h2 {
     padding-bottom: 20px;
     border-radius: 15px;
     font-size: 0.9em;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);  
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     max-width: 200px;
+    overflow: auto;
+}
 }
 
 .reg-card h3 {
