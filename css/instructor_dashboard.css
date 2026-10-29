@@ -1,0 +1,439 @@
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: #EEF2F6;
+  color: #1F2933;
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: bold;
+}
+
+a {
+  color: #1F3A5F;
+}
+
+td {
+  padding: 6px 10px;
+}
+
+input, select, textarea, button {
+  font-family: "Segoe UI", Arial, sans-serif;
+  font-size: 1rem;
+}
+
+/* ----- Page header: ID selector, position sticky, z-index ----- */
+#page-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding: 16px 24px;
+  background-color: #1F3A5F;
+  border-bottom: 4px solid #2E7D8C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+#page-header .logo {
+  color: #FFFFFF;
+  font-size: 1.75rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* ----- Form container: box model, border-radius, box-shadow ----- */
+.form-container {
+  margin: 32px auto;
+  padding: 28px 32px;
+  background-color: #FFFFFF;
+  border: 1px solid #D5DDE6;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  overflow-x: auto;
+}
+
+.form-container h2 {
+  margin-bottom: 8px;
+  color: #1F3A5F;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.form-container p {
+  margin: 0 0 20px 0;
+  color: #52606D;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.form-container table {
+  margin: 0 auto;
+}
+
+/* ----- Fieldsets, legends and labels ----- */
+fieldset {
+  margin: 0 0 16px 0;
+  padding: 12px 16px;
+  border: 1px solid #B8C4D2;
+  border-radius: 8px;
+}
+
+legend {
+  padding: 0 0.5em;
+  color: #1F3A5F;
+  font-size: 0.9rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+label {
+  color: #334E68;
+}
+
+.hint {
+  color: #52606D;
+  font-size: 0.85rem;
+}
+
+/* ----- Input fields: class selector, :focus ----- */
+.field {
+  padding: 6px 8px;
+  border: 1px solid #9AA5B1;
+  border-radius: 4px;
+  background-color: #FFFFFF;
+  color: #1F2933;
+  font-size: 0.9rem;
+}
+
+.field:focus {
+  outline: 2px solid #2E7D8C;
+}
+
+/* ----- Buttons: display, hover, transition ----- */
+.btn {
+  display: inline-block;
+  margin: 4px;
+  padding: 10px 24px;
+  background-color: #1F3A5F;
+  border: 1px solid #1F3A5F;
+  border-radius: 6px;
+  color: #FFFFFF;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: #2E5C8A;
+}
+
+.btn:focus {
+  outline: 3px solid #2E7D8C;
+}
+
+.btn-secondary {
+  background-color: #627D98;
+  border-color: #627D98;
+}
+
+.btn-secondary:hover {
+  background-color: #829AB1;
+}
+
+.button-row {
+  margin-top: 8px;
+  text-align: center;
+}
+
+/* ----- Footer ----- */
+#page-footer {
+  margin-top: 32px;
+  padding: 16px;
+  background-color: #1F3A5F;
+  color: #C9D6E5;
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#page-footer p {
+  margin: 0;
+  opacity: 0.85;
+}
+
+
+/* ----- Header and navigation bar: flexbox, sticky, z-index ----- */
+#top-bar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  padding: 0 24px;
+  background-color: #1F3A5F;
+  border-bottom: 4px solid #2E7D8C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#top-bar .logo {
+  margin-right: 32px;
+  padding: 14px 0;
+  color: #FFFFFF;
+  font-size: 1.4rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.main-nav {
+  flex: 1;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 18px 16px;
+  color: #D9E2EC;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-link:hover {
+  background-color: #2E5C8A;
+  color: #FFFFFF;
+}
+
+.nav-link.active {
+  background-color: #2E7D8C;
+  color: #FFFFFF;
+}
+
+/* ----- Page layout: flexbox with 1 : 3 columns ----- */
+.layout {
+  display: flex;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 24px auto;
+  padding: 0 16px;
+}
+
+.sidebar {
+  flex: 1;
+}
+
+.content {
+  flex: 3;
+  overflow-x: auto;
+}
+
+/* Invisible anchor so menu links do not hide under the sticky bar */
+.anchor {
+  position: relative;
+  top: -90px;
+  display: block;
+  height: 0;
+}
+
+/* ----- Cards ----- */
+.card {
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  background-color: #FFFFFF;
+  border: 1px solid #D5DDE6;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.card h2 {
+  color: #1F3A5F;
+  font-size: 1.5rem;
+}
+
+.card h3 {
+  margin-bottom: 12px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #E1E8EF;
+  color: #1F3A5F;
+  font-size: 1.1rem;
+}
+
+.card p {
+  margin: 4px 0 0 0;
+  color: #52606D;
+}
+
+/* ----- Profile card: position relative and absolute ----- */
+.profile {
+  text-align: center;
+}
+
+.avatar {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  margin: 0 auto 12px auto;
+  background-color: #1F3A5F;
+  border: 3px solid #2E7D8C;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-size: 2rem;
+  line-height: 84px;
+  text-align: center;
+}
+
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -10px;
+  z-index: 2;
+  padding: 0 8px;
+  background-color: #A61B1B;
+  border: 2px solid #FFFFFF;
+  border-radius: 12px;
+  color: #FFFFFF;
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+.profile-name {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.profile-title {
+  color: #52606D;
+}
+
+/* ----- Quick action buttons ----- */
+.sidebar .btn {
+  display: block;
+  width: 100%;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+/* ----- Statistic cards: CSS grid, hover transition ----- */
+.stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+  padding: 4px;
+}
+
+.stat-card {
+  padding: 14px 16px;
+  background-color: #FFFFFF;
+  border: 1px solid #D5DDE6;
+  border-top: 4px solid #2E7D8C;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.stat-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+.stat-number {
+  color: #1F3A5F;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.stat-label {
+  color: #52606D;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* ----- Data tables: overflow, nth-child, hover ----- */
+.table-wrap {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+}
+
+.data-table th {
+  padding: 10px 12px;
+  background-color: #1F3A5F;
+  color: #FFFFFF;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.data-table td {
+  padding: 10px 12px;
+  background-color: #F4F7FA;
+  transition: background-color 0.3s;
+}
+
+.data-table tr:nth-child(even) td {
+  background-color: #E9EEF4;
+}
+
+.data-table tr:hover td {
+  background-color: #D6E4F0;
+}
+
+.btn-small {
+  margin: 0 2px;
+  padding: 4px 12px;
+  font-size: 0.85rem;
+}
+
+.btn-danger {
+  background-color: #A61B1B;
+  border-color: #A61B1B;
+}
+
+.btn-danger:hover {
+  background-color: #C53030;
+}
+
+/* ----- Announcement form ----- */
+.announce-form textarea,
+.announce-form select {
+  width: 100%;
+}
+
+/* ----- Notice board: fixed height with overflow-y ----- */
+.notice-board {
+  height: 160px;
+  margin: 0;
+  padding: 8px 16px 8px 36px;
+  overflow-y: auto;
+  background-color: #F4F7FA;
+  border-left: 5px solid #2E7D8C;
+}
+
+.notice-board li {
+  padding: 4px 0;
+}
+
+/* ----- Back to top: position fixed, z-index ----- */
+.back-to-top {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 50;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* ----- Quick Actions card stays visible while scrolling ----- */
+#quick-actions {
+  position: sticky;
+  top: 90px;
+}
