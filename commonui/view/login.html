@@ -4,9 +4,9 @@
     <head>
         <title>EduTech - Login</title>
         <link rel="stylesheet" href="../../css/login.css">
+        <script src = "js/login.js" defer></script>
     </head>
     <body>
-
         <div id = "header">
             <h1>EduTech</h1>
         </div>
@@ -15,28 +15,30 @@
             <br>
             <h2 class = "center low-top-margin">Login</h2>
             <p class = "center low-top-margin">Back to learn some more? Please enter your login details to access your account. </p>
-            <form>
+            <form name = "login" action = "login_success_message.html" method = "post" onsubmit="return validateForm()">
                 <fieldset>
-
                     <div class = "form-group">
                         <label>User Type:</label>
-                        <select class = "fillup center" required>
+                        <select id = "userTypeSelect" class = "fillup center">
                             <option value=""> -- Select User Type -- </option>
                             <option value="Student">Student</option>
                             <option value="Instructor">Instructor</option>
                             <option value="Admin">Admin</option>
                             <option value="Customer Support">Customer Support</option>
                         </select>
+                        <p id = "typeError" class = "error"></p>
                     </div>
 
                     <div class = "form-group">
-                        <label for="username">Username / Email:</label>
-                        <input type="text" class = "fillup" size="30" placeholder="Enter your username or email" required>
+                        <label for="email">Email:</label>
+                        <input id = "emailBox" type="text" class = "fillup" size="30" placeholder="Enter your email">
+                        <p id = "emailError" class = "error"></p>
                     </div>
 
                     <div class = "form-group">
                         <label for="password">Password:</label>
-                        <input type="password" class = "fillup" id="password" name="password" size="30" required>
+                        <input id = "pwBox" type="password" class = "fillup" id="password" name="password" size="30">
+                        <p id = "pwError" class = "error"></p>
                     </div>
                 </fieldset>
 

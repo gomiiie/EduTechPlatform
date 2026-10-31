@@ -8,12 +8,13 @@
         <h1 class="center">EduTech Platform</h1>
         <h2 class="center">Sign up as a student</h2>
         <p class="center" id="headerpara">Access a wide variety of courses from experienced instructors</h2>
-        <form>
+        <form action="../../commonui/view/login_success_message.html" method = "post" onsubmit="return validateForm()">
             <fieldset>
                 <legend>Account Information</legend>
                     <div class = "form-group">
                         <label>Full Name</label>
-                        <input type = "text">
+                        <input id = "nameBox" type = "text">
+                        <p id = "nameError" class = "error"></p>
                     </div>
                     <div class = "form-group">
                         <label>Email</label>
@@ -21,11 +22,13 @@
                     </div>
                     <div class = "form-group">
                         <label>Password</label>
-                        <input type = "password">
+                        <input id = "pwBox" type = "password">
+                        <p id = "pwError" class = "error"></p>
                     </div>
                     <div class = "form-group">
                         <label>Confirm Password</label>
-                        <input type = "password">
+                        <input id = "cpwBox" type = "password">
+                        <p id = "cpwError" class = "error"></p>
                     </div>
             </fieldset>
             <hr>
@@ -33,11 +36,13 @@
                 <legend>Personal Details</legend>
                 <div class = "form-group">
                     <label>Date of Birth</label>
-                    <input type = "date">
+                    <input id = "dobBox" type = "date">
+                    <p id = "dobError" class = "error"></p>
                 </div>
                 <div class = "form-group">
                     <label>Phone Number (Optional)</label>
-                    <input type = "tel">
+                    <input id = "telBox" type = "tel">
+                    <p id = "telError" class = "error"></p>
                 </div>
                 <div class = "form-group">
                     <label>Gender</label>
@@ -76,13 +81,14 @@
                     <br>
                     <label>Interests:</label>
                     <div class = "checkbox-group">
-                        <label class = "cbox"><input type = "checkbox"> Programming</label>
-                        <label class = "cbox"><input type = "checkbox"> Design</label>
+                        <label class = "cbox"><input class = "interest-cbox" type = "checkbox"> Programming</label>
+                        <label class = "cbox"><input class = "interest-cbox" type = "checkbox"> Design</label>
                     </div>
                     <div class = "checkbox-group">
-                        <label class = "cbox"><input type = "checkbox"> Business</label>
-                        <label class = "cbox"><input type = "checkbox"> Science</label>
+                        <label class = "cbox"><input class = "interest-cbox" type = "checkbox"> Business</label>
+                        <label class = "cbox"><input class = "interest-cbox" type = "checkbox"> Science</label>
                     </div>
+                    <p id = "cboxError" class = "error"></p>
                 </div>
             </fieldset>
 
@@ -92,7 +98,7 @@
             <a href="../../commonui/view/homepage.html" id = "btn-back" class = "buttons"> Go Back </a>
         </div>
         </form>
-        
+        <script src = "../js/student.js"></script>
         
     </body>
 </html>

@@ -15,6 +15,14 @@ label {
     margin-bottom: 20px;
 }
 
+.error {
+    margin: 0px;
+    margin-left: 5px;
+    font-size: 0.75em;
+    font-family: system-ui;
+    color: red;
+}
+
 .fillup {
     border: 1px solid #ddd;
     border-radius: 8px;
