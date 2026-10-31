@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title> EduTech Platform - Instructor Dashboard </title>
+<link rel="stylesheet" href="../../css/instructor_dashboard.css">
+</head>
+<body id="top">
+
+<header id="top-bar">
+ <h1 class="logo"> EduTech </h1>
+ <nav class="main-nav">
+  <a class="nav-link active" href="#overview"> Overview </a>
+  <a class="nav-link" href="#my-courses"> My Courses </a>
+  <a class="nav-link" href="#students"> Students </a>
+  <a class="nav-link" href="#quiz-scores"> Quiz Scores </a>
+  <a class="nav-link" href="#announcements"> Announcements </a>
+ </nav>
+ <a class="nav-link" href="../../commonui/view/login.html"> Logout </a>
+</header>
+
+<div class="layout">
+
+ <aside class="sidebar">
+
+  <div class="card profile" align="center">
+   <div class="avatar">
+    RU
+    <span class="badge"> 3 </span>
+   </div>
+   <div class="profile-name"> Rahim Uddin </div>
+   <div class="profile-title"> Senior Web Developer </div>
+   <p> Area of Expertise: Web Development </p>
+   <p> Experience: 8 years </p>
+  </div>
+
+  <div class="card" id="quick-actions">
+   <h3> Quick Actions </h3>
+   <button class="btn" type="button"> Create Course </button>
+   <button class="btn" type="button"> Add Lesson </button>
+   <button class="btn" type="button"> Create Quiz </button>
+   <a class="btn btn-secondary" href="../../commonui/view/homepage.html"> Go to Home Page </a>
+  </div>
+
+ </aside>
+
+ <main class="content">
+
+  <span class="anchor" id="overview"></span>
+  <div class="card">
+   <h2> Instructor Dashboard </h2>
+   <p> Welcome back, Rahim. Here is a summary of your courses, students and quizzes. </p>
+  </div>
+
+  <div class="stats">
+   <div class="stat-card" align="center">
+    <div class="stat-number"> 4 </div>
+    <div class="stat-label"> Courses </div>
+   </div>
+   <div class="stat-card" align="center">
+    <div class="stat-number"> 317 </div>
+    <div class="stat-label"> Students </div>
+   </div>
+   <div class="stat-card" align="center">
+    <div class="stat-number"> 9 </div>
+    <div class="stat-label"> Quizzes </div>
+   </div>
+   <div class="stat-card" align="center">
+    <div class="stat-number"> 78% </div>
+    <div class="stat-label"> Average Score </div>
+   </div>
+  </div>
+
+  <span class="anchor" id="my-courses"></span>
+  <div class="card">
+   <h3> My Courses </h3>
+   <div class="table-wrap">
+    <table class="data-table">
+     <tr>
+      <th> Title </th>
+      <th> Category </th>
+      <th> Price (BDT) </th>
+      <th> Lessons </th>
+      <th> Students </th>
+      <th> Actions </th>
+     </tr>
+     <tr>
+      <td> Web Development Basic </td>
+      <td> Web Development </td>
+      <td> 2500 </td>
+      <td> 24 </td>
+      <td> 120 </td>
+      <td> <button class="btn btn-small" type="button"> Edit </button> <button class="btn btn-small btn-danger" type="button"> Delete </button> </td>
+     </tr>
+     <tr>
+      <td> C# Basic </td>
+      <td> Programming </td>
+      <td> 3000 </td>
+      <td> 30 </td>
+      <td> 95 </td>
+      <td> <button class="btn btn-small" type="button"> Edit </button> <button class="btn btn-small btn-danger" type="button"> Delete </button> </td>
+     </tr>
+     <tr>
+      <td> Java Basic </td>
+      <td> Programming </td>
+      <td> 4000 </td>
+      <td> 18 </td>
+      <td> 60 </td>
+      <td> <button class="btn btn-small" type="button"> Edit </button> <button class="btn btn-small btn-danger" type="button"> Delete </button> </td>
+     </tr>
+     <tr>
+      <td> Introduction to Networking </td>
+      <td> Networking </td>
+      <td> 3500 </td>
+      <td> 20 </td>
+      <td> 42 </td>
+      <td> <button class="btn btn-small" type="button"> Edit </button> <button class="btn btn-small btn-danger" type="button"> Delete </button> </td>
+     </tr>
+    </table>
+   </div>
+  </div>
+
+  <span class="anchor" id="students"></span>
+  <div class="card">
+   <h3> Enrolled Students </h3>
+   <div class="table-wrap">
+    <table class="data-table">
+     <tr>
+      <th> Student </th>
+      <th> Email </th>
+      <th> Course </th>
+      <th> Enrolled On </th>
+     </tr>
+     <tr>
+      <td> Tanvir Ahmed </td>
+      <td> tanvir@example.com </td>
+      <td> Web Development Basic </td>
+      <td> 2026-09-12 </td>
+     </tr>
+     <tr>
+      <td> Nusrat Jahan </td>
+      <td> nusrat@example.com </td>
+      <td> C# Basic </td>
+      <td> 2026-09-15 </td>
+     </tr>
+     <tr>
+      <td> Imran Hossain </td>
+      <td> imran@example.com </td>
+      <td> Java Basic </td>
+      <td> 2026-09-20 </td>
+     </tr>
+     <tr>
+      <td> Farzana Akter </td>
+      <td> farzana@example.com </td>
+      <td> Introduction to Networking </td>
+      <td> 2026-10-02 </td>
+     </tr>
+    </table>
+   </div>
+   <center>
+   <div class="button-row">
+    <button class="btn btn-small" type="button"> View All </button>
+   </div>
+   </center>
+  </div>
+
+  <span class="anchor" id="quiz-scores"></span>
+  <div class="card">
+   <h3> Student Quiz Scores </h3>
+   <div class="table-wrap">
+    <table class="data-table">
+     <tr>
+      <th> Student </th>
+      <th> Course </th>
+      <th> Quiz </th>
+      <th> Score </th>
+     </tr>
+     <tr>
+      <td> Tanvir Ahmed </td>
+      <td> Web Development Basic </td>
+      <td> HTML Basics Quiz </td>
+      <td> 18 / 20 </td>
+     </tr>
+     <tr>
+      <td> Nusrat Jahan </td>
+      <td> C# Basic </td>
+      <td> C# Syntax Quiz </td>
+      <td> 15 / 20 </td>
+     </tr>
+     <tr>
+      <td> Imran Hossain </td>
+      <td> Java Basic </td>
+      <td> OOP Basics Quiz </td>
+      <td> 14 / 20 </td>
+     </tr>
+     <tr>
+      <td> Farzana Akter </td>
+      <td> Introduction to Networking </td>
+      <td> Network Models </td>
+      <td> 17 / 20 </td>
+     </tr>
+    </table>
+   </div>
+   <center>
+   <div class="button-row">
+    <button class="btn btn-small" type="button"> View All </button>
+   </div>
+   </center>
+  </div>
+
+  <span class="anchor" id="announcements"></span>
+  <div class="card">
+   <h3> Post an Announcement </h3>
+   <form class="announce-form" action="instructor_dashboard.html" method="post">
+    <table align="center">
+     <tr>
+      <td> <label for="announce_course"> Course *: </label> </td>
+      <td>
+       <select class="field" id="announce_course" name="announce_course" required>
+        <option value=""> -- Select Course -- </option>
+        <option value="Web Development Basic"> Web Development Basic </option>
+        <option value="C# Basic"> C# Basic </option>
+        <option value="Java Basic"> Java Basic </option>
+        <option value="Introduction to Networking"> Introduction to Networking </option>
+       </select>
+      </td>
+     </tr>
+     <tr>
+      <td> <label for="announce_message"> Message *: </label> </td>
+      <td> <textarea class="field" id="announce_message" name="announce_message" rows="4" cols="50" maxlength="300" required></textarea> </td>
+     </tr>
+    </table>
+    <center>
+<div class="button-row">
+     <input class="btn" type="submit" value="Post Announcement">
+     <input class="btn btn-secondary" type="reset" value="Clear Form">
+    </div>
+</center>
+   </form>
+  </div>
+
+  <div class="card">
+   <h3> Recent Announcements </h3>
+   <ul class="notice-board">
+    <li> Web Development Basic: Lab 3 is due on Sunday. </li>
+    <li> C# Basic: Quiz 2 will be held in Week 6. </li>
+    <li> Java Basic: New lesson on classes added. </li>
+    <li> Introduction to Networking: Live session on Friday at 8 PM. </li>
+    <li> Web Development Basic: Project groups have been published. </li>
+    <li> C# Basic: Lesson 12 has been updated. </li>
+   </ul>
+  </div>
+
+ </main>
+
+</div>
+
+<footer id="page-footer">
+ <p> &copy; EduTech Platform. All rights reserved. </p>
+</footer>
+
+<a class="btn back-to-top" href="#top"> Back to Top </a>
+
+</body>
+</html>
