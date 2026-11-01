@@ -20,7 +20,7 @@ function validEmail() {
         emailE.innerHTML = "Email must contain @ .com domain";
         return false;
     }
-    typeE.innerHTML = "";
+    emailE.innerHTML = "";
     return true;
 }
 
