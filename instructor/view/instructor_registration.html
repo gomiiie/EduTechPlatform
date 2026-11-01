@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title> EduTech Platform - Instructor Registration </title>
+<title> EduTech - Instructor Registration </title>
 <link rel="stylesheet" href="../../css/instructor_registration.css">
 </head>
 <body>
@@ -16,7 +16,7 @@
 <h2 align="center"> Instructor Registration Form </h2>
 <p align="center">Please fill in the form below to create your instructor account. Fields marked with * are required. </p>
 
-<form action="registration_complete.html" method="post">
+<form id="registration_form" action="registration_complete.html" method="post" novalidate>
 
 <fieldset>
 <legend> Account Details </legend>
@@ -25,16 +25,18 @@
 
  <tr>
   <td>  <label for="email"> Email *: </label>  </td>
-  <td>  <input class="field" type="email" id="email" name="email" size="30" placeholder="you@example.com" required> </td>
+  <td>  <input class="field" type="text" id="email" name="email" size="30" placeholder="you@example.com"> 
+    <div id="email_error"></div> 
+  </td>
   <td> <label for="username"> Username *: </label> </td>
-  <td> <input class="field" type="text" id="username" name="username" size="30" minlength="4" maxlength="20" required> </td>
+  <td> <input class="field" type="text" id="username" name="username" size="30"> <div id="username_error"></div> </td>
  </tr>
 
  <tr>
   <td> <label for="password"> Password *:</label>  </td>
-  <td> <input class="field" type="password" id="password" name="password" size="30" minlength="8" required> </td>
+  <td> <input class="field" type="password" id="password" name="password" size="30"> <div id="password_error"></div> </td>
   <td> <label for="confirm_password">Confirm Password *:</label> </td>
-  <td> <input class="field" type="password" id="confirm_password" name="confirm_password" size="30" minlength="8" required> </td>
+  <td> <input class="field" type="password" id="confirm_password" name="confirm_password" size="30"> <div id="confirm_password_error"></div> </td>
  </tr>
 </table>
 </fieldset>
@@ -45,7 +47,7 @@
 
 <tr>
  <td> <label for="name"> Full Name *: </label> </td>
- <td> <input class="field" type="text" id="name" name="name" size="30" required> </td>
+ <td> <input class="field" type="text" id="name" name="name" size="30"> <div id="name_error"></div> </td>
  <td> Gender: </td>
 <td>
 <input type="radio" id="male" name="gender" value="Male">
@@ -57,21 +59,21 @@
 
 <tr>
  <td> <label for="dob">Date of Birth:</label> </td>
- <td> <input class="field" type="date" id="dob" name="dob"> </td>
+ <td> <input class="field" type="date" id="dob" name="dob"> <div id="dob_error"></div> </td>
  <td><label for="phone"> Phone:</label> </td>
- <td><input class="field" type="tel" id="phone" name="phone" size="30" placeholder="01XXXXXXXXX" pattern="[0-9]{11}" title="Enter an 11 digit phone number"> </td>
+ <td><input class="field" type="text" id="phone" name="phone" size="30" placeholder="+880 1XXXXXXXXX"> <div id="phone_error"></div> </td>
 </tr>
 
 <tr>
  <td> <label for="nationality"> Nationality:</label> </td>
- <td colspan="3"> <input class="field" type="text" id="nationality" name="nationality" size="30" placeholder="e.g. Bangladeshi"> </td>
+ <td colspan="3"> <input class="field" type="text" id="nationality" name="nationality" size="30" placeholder="e.g. Bangladeshi"> <div id="nationality_error"></div> </td>
 </tr>
 
 <tr>
  <td> <label for="present_address"> Present Address: </label> </td>
- <td> <textarea class="field" id="present_address" name="present_address" rows="4" cols="30" maxlength="200"></textarea>  </td>
+ <td> <textarea class="field" id="present_address" name="present_address" rows="4" cols="30"></textarea> <div id="present_address_error"></div>  </td>
 <td> <label for="permanent_address">Permanent Address:</label> </td>
-<td> <textarea class="field" id="permanent_address" name="permanent_address" rows="4" cols="30" maxlength="200"></textarea> </td>
+<td> <textarea class="field" id="permanent_address" name="permanent_address" rows="4" cols="30"></textarea> <div id="permanent_address_error"></div> </td>
 </tr>
 </table>
 </fieldset>
@@ -82,10 +84,10 @@
 
 <tr>
  <td> <label for="title">Professional Title *:</label> </td>
- <td> <input class="field" type="text" id="title" name="title" size="30" placeholder="e.g. Senior Web Developer" required> </td>
+ <td> <input class="field" type="text" id="title" name="title" size="30" placeholder="e.g. Senior Web Developer"> <div id="title_error"></div> </td>
  <td> <label for="expertise">Area of Expertise *:</label> </td>
  <td>
- <input class="field" list="expertise_list" id="expertise" name="expertise" size="24" placeholder="Select or type your field" required>
+ <input class="field" list="expertise_list" id="expertise" name="expertise" size="24" placeholder="Select or type your field">
   <datalist id="expertise_list">
    <option value="Web Development">
    <option value="Programming">
@@ -100,14 +102,17 @@
   <option value="Health">
   <option value="Arts">
 </datalist>
+ <div id="expertise_error"></div>
 </td>
 </tr>
 
 <tr>
 <td> <label for="experience">Years of Experience *: </label> </td>
-<td> <input class="field" type="number" id="experience" name="experience" min="0" max="50" required> </td>
+<td> <input class="field" type="number" id="experience" name="experience"> <div id="experience_error"></div> 
+</td>
+
 <td> <label for="price">Expected Course Price: </label> </td>
-<td> BDT <input class="field" type="number" id="price" name="price" min="0" step="100"> </td>
+<td> BDT <input class="field" type="text" id="price" name="price" step="100"> <div id="price_error"></div> </td>
 </tr>
 
 <tr>
@@ -123,15 +128,19 @@
 <label for="both">Both</label>
 </td>
 <td> <label for="availability">Weekly Availability (hours):</label> </td>
-<td> <input class="field" type="number" id="availability" name="availability" min="0" max="40" value="10"> <span class="hint">hours per week (0 - 40)</span> </td>
+<td> <input class="field" type="number" id="availability" name="availability" value="10"> 
+  <span class="hint">hours per week (1 - 40)</span> 
+  <div id="availability_error"></div> 
+</td>
 </tr>
 
 <tr>
 <td> <label for="bio"> Short Bio: </label> </td>
-<td colspan="3"><textarea class="field" id="bio" name="bio" rows="8" cols="90" maxlength="500" placeholder="Tell students about yourself"></textarea> </td>
+<td colspan="3"><textarea class="field" id="bio" name="bio" rows="8" cols="90" placeholder="Tell students about yourself"></textarea> <div id="bio_error"></div> </td>
 </tr>
 </table>
 </fieldset>
+
 
 <fieldset>
 <legend>Education Information </legend>
@@ -148,46 +157,16 @@
 </td>
 
 <td> <label for="subject"> Field of Study: </label> </td>
-<td> <input class="field" type="text" id="subject" name="subject" size="30"> </td>
+<td> <input class="field" type="text" id="subject" name="subject" size="30"> <div id="subject_error"></div> </td>
 </tr>
 
 <tr>
  <td> <label for="university"> University: </label> </td>
- <td> <input class="field" type="text" id="university" name="university" size="30"> </td>
- <td> <label for="passing_year">Passing Year: </label></td>
- <td> <input class="field" type="number" id="passing_year" name="passing_year" min="1970" max="2026"> </td>
-</tr>
-</table>
-</fieldset>
+ <td> <input class="field" type="text" id="university" name="university" size="30"> <div id="university_error"></div> 
+ </td>
 
-<fieldset>
-<legend> Teaching Preferences</legend>
-<table align="center">
-<tr>
-<td> Course Content: </td>
-<td>
-<input type="checkbox" id="content1" name="content1" value="Video Lessons">
-<label for="content1"> Video Lessons </label>
-<input type="checkbox" id="content2" name="content2" value="Quizzes">
-<label for="content2">Quizzes</label>
-<input type="checkbox" id="content3" name="content3" value="Announcements">
-<label for="content3"> Announcements </label>
-<input type="checkbox" id="content4" name="content4" value="Assignments">
-<label for="content4"> Assignments</label>
-</td>
-</tr>
-<tr>
-<td> <label for="languages">Teaching Languages: </label> </td>
-<td>
-<select class="field" id="languages" name="languages" size="2" multiple>
-<option value="English">English </option>
-<option value="Bangla">Bangla </option>
-</select>
-</td>
-</tr>
-<tr>
-<td> <label for="portfolio"> Portfolio / LinkedIn Link: </label> </td>
-<td> <input class="field" type="url" id="portfolio" name="portfolio" size="40" placeholder="https://"> <span class="hint">(optional)</span> </td>
+ <td> <label for="passing_year">Passing Year: </label></td>
+ <td> <input class="field" id="passing_year" name="passing_year"> <div id="passing_year_error"></div> </td>
 </tr>
 </table>
 </fieldset>
@@ -196,10 +175,10 @@
 <legend>Documents </legend>
 <table align="center">
 <tr>
-<td> <label for="cv"> Upload CV: </label> </td>
-<td> <input type="file" id="cv" name="cv"> </td>
-<td> <label for="photo">Photo: </label></td>
-<td> <input type="file" id="photo" name="photo" accept="image/*"> </td>
+<td> <label for="cv"> Upload CV *: </label> </td>
+<td> <input type="file" id="cv" name="cv"> <div id="cv_error"></div> </td>
+<td> <label for="photo">Photo *: </label></td>
+<td> <input type="file" id="photo" name="photo" accept="image/*"> <div id="photo_error"></div> </td>
 </tr>
 <tr>
 <td> <label for="id_type">ID Type: </label> </td>
@@ -210,27 +189,34 @@
 <option value="Driving License">Driving License</option>
 </select>
 </td>
-<td> <label for="id_file">Upload ID:</label> </td>
-<td> <input type="file" id="id_file" name="id_file"> </td>
+<td> <label for="id_file">Upload ID *:</label> </td>
+<td> <input type="file" id="id_file" name="id_file"> <div id="id_file_error"></div> </td>
 </tr>
 <tr>
-<td> <label for="certificate"> Certificate: </label> </td>
-<td> <input type="file" id="certificate" name="certificate"> </td>
+<td> <label for="certificate"> Certificate *: </label> </td>
+<td> <input type="file" id="certificate" name="certificate"> <div id="certificate_error"></div> </td>
+<td> <label for="portfolio"> Portfolio / LinkedIn Link: </label> </td>
+<td> <input class="field" type="text" id="portfolio" name="portfolio" size="30" placeholder="https://"> <span class="hint">(optional)</span> 
+  <div id="portfolio_error"></div> 
+</td>
 </tr>
 </table>
 </fieldset>
 
 <fieldset>
 <legend> Confirmation </legend>
-<input type="checkbox" id="terms" name="terms" value="Agreed" required>
+<input type="checkbox" id="terms" name="terms" value="Agreed">
 <label for="terms"> I agree to the Terms and Conditions. * </label>
+<div id="terms_error"></div>
 </fieldset>
+
+<div id="form_message" align="center"></div>
 
 <center>
 <div class="button-row">
  <input class="btn" type="submit" value="Register as Instructor">
- <input class="btn btn-secondary" type="reset" value="Clear Form">
- <a class="btn btn-secondary" href="../commonui/homepage.html"> Go Back </a>
+ <input class="btn btn-secondary" type="reset" id="clear_btn" value="Clear Form">
+ <a class="btn btn-secondary" href="../../commonui/view/homepage.html"> Go Back </a>
 </div>
 </center>
 
@@ -241,6 +227,8 @@
 <footer id="page-footer">
  <p> &copy; EduTech Platform. All rights reserved. </p>
 </footer>
+
+<script src="js/instructor_registration.js"></script>  
 
 </body>
 </html>
