@@ -46,7 +46,7 @@ input, select, textarea, button {
   color: #FFFFFF;
   font-size: 1.75rem;
   letter-spacing: 2px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
 }
 
 /* ----- Form container: box model, border-radius, box-shadow ----- */
