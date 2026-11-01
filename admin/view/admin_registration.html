@@ -4,66 +4,89 @@
             Admin Registration
         </title>
         <link rel = "stylesheet" href = "../../css/css_admin_registration.css">
+        <script src = "../js/admin.js" defer></script>
     </head>
- 
+
     <body>
         <h2>Admin Registration</h2>
- 
-        <form>
+
+        <form id = "adminRegForm" novalidate>
             <fieldset>
                 <legend>Account Information</legend>
- 
+
                 <table>
                     <tr>
-                        <td><label>Full Name:</label></td>
-                        <td><input type = "text"></td>
-                        <td><label>Email: </label></td>
-                        <td><input type = "email"></td>
-                    </tr>
-                    <tr>
-                        <td><label>Password:</label></td>
-                        <td><input type = "password"></td>
-                        <td><label>Confirm Password:</label></td>
-                        <td><input type = "password"></td>
-                    </tr>
-                </table>
-            </fieldset>
- 
-            <fieldset>
-                <legend>Staff Details</legend>
- 
-                <table>
-                    <tr>
-                        <td><label>Admin ID:</label></td>
-                        <td><input type = "text"></td>
-                        <td><label>Department:</label></td>
+                        <td><label for = "fullName">Full Name:</label></td>
                         <td>
-                            <select>
-                                <option value = "">Select</option>
-                                <option>Operations</option>
-                                <option>Content</option>
-                                <option>Finance</option>
-                            </select>
+                            <input type = "text" id = "fullName">
+                            <br><span id = "fullNameErr" style = "color: red;"></span>
+                        </td>
+                        <td><label for = "regEmail">Email: </label></td>
+                        <td>
+                            <input type = "email" id = "regEmail">
+                            <br><span id = "regEmailErr" style = "color: red;"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for = "regPassword">Password:</label></td>
+                        <td>
+                            <input type = "password" id = "regPassword">
+                            <br><span id = "regPasswordErr" style = "color: red;"></span>
+                        </td>
+                        <td><label for = "confirmPassword">Confirm Password:</label></td>
+                        <td>
+                            <input type = "password" id = "confirmPassword">
+                            <br><span id = "confirmPasswordErr" style = "color: red;"></span>
                         </td>
                     </tr>
                 </table>
             </fieldset>
- 
+
             <fieldset>
-                <legend>Verification</legend>
- 
+                <legend>Staff Details</legend>
+
                 <table>
                     <tr>
-                        <td><label>Admin Access Code:</label></td>
-                        <td><input type = "password"></td>
+                        <td><label for = "adminId">Admin ID:</label></td>
+                        <td>
+                            <input type = "text" id = "adminId">
+                            <br><span id = "adminIdErr" style = "color: red;"></span>
+                        </td>
+                        <td><label for = "department">Department:</label></td>
+                        <td>
+                            <select id = "department">
+                                <option value = "">Select</option>
+                                <option value = "Operations">Operations</option>
+                                <option value = "Content">Content</option>
+                                <option value = "Finance">Finance</option>
+                            </select>
+                            <br><span id = "departmentErr" style = "color: red;"></span>
+                        </td>
                     </tr>
                 </table>
             </fieldset>
- 
+
+            <fieldset>
+                <legend>Verification</legend>
+
+                <table>
+                    <tr>
+                        <td><label for = "accessCode">Admin Access Code:</label></td>
+                        <td>
+                            <input type = "password" id = "accessCode">
+                            <br><span id = "accessCodeErr" style = "color: red;"></span>
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
             <br>
- 
+
             <input type = "submit" value = "Register">
             <input type = "reset" value = "Reset">
- 
+
+            <br><br>
+            <span id = "regSuccessMsg" style = "color: green;"></span>
+        </form>
     </body>
 </html>

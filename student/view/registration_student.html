@@ -18,7 +18,8 @@
                     </div>
                     <div class = "form-group">
                         <label>Email</label>
-                        <input type = "email">
+                        <input id = "emailBox" type = "email">
+                        <p id = "emailError" class = "error"></p>
                     </div>
                     <div class = "form-group">
                         <label>Password</label>
@@ -46,16 +47,17 @@
                 </div>
                 <div class = "form-group">
                     <label>Gender</label>
-                    <select>
+                    <select class = "selectE">
                         <option value = "">Select</option>
                         <option>Male</option>
                         <option>Female</option>
                         <option>Prefer not to say</option>
                     </select>
+                    <p id = "gError" class = "gErrorr error"></p>
                 </div>
                 <div class = "form-group">
                     <label>Country:</label>
-                    <select>
+                    <select class = "selectE">
                         <option value = "">Select</option>
                         <option>Bangladesh</option>
                         <option>India</option>
@@ -64,6 +66,7 @@
                         <option>United Kingdom</option>
                         <option>Other</option>
                     </select>
+                    <p id = "gError" class = "gErrorr error"></p>
                 </div>
             </fieldset>
             <hr>
@@ -71,13 +74,14 @@
                 <legend>Learning Preferences</legend>
                 <div class = "form-group">
                     <label>Education Level:</label>
-                    <select>
+                    <select class = "selectE">
                         <option value = "">Select</option>
                         <option>High School</option>
                         <option>Undergraduate</option>
                         <option>Postgraduate</option>
                         <option>Other</option>
                     </select>
+                    <p id = "gError" class = "gErrorr error"></p>
                     <br>
                     <label>Interests:</label>
                     <div class = "checkbox-group">

@@ -133,6 +133,38 @@ function validInt() {
     return false;
 }
 
+function validEmail() {
+    const email = document.getElementById("emailBox").value;
+    const emailE = document.getElementById("emailError");
+    if (email === "") {
+        emailE.innerHTML = "Email cannot be empty";
+        return false;
+    }
+    if (!email.includes("@") || !email.includes(".com")) {
+        emailE.innerHTML = "Email must contain @ .com domain";
+        return false;
+    }
+    emailE.innerHTML = "";
+    return true;
+}
+
+function validSelect() {
+    let flag = true;
+    const selectEs = document.getElementsByClassName("gErrorr");
+    const selectFields = document.getElementsByClassName("selectE");
+    for (let i = 0; i < selectFields.length; i++) {
+        if (selectFields[i].value == "") {
+            selectEs[i].innerHTML = "Please select an option";
+            flag = false;
+        }
+        else {
+            selectEs[i].innerHTML = "";
+        }
+    }
+    return flag;
+}
+
+
 function validateForm() {
 
     let flag = true;
@@ -141,20 +173,14 @@ function validateForm() {
     if (!validAge()) flag = false;
     if (!validPW()) flag = false;
     if (!validInt()) flag = false;
+    if (!validEmail()) flag = false;
+    if (!validSelect()) flag = false;
 
     if (flag) {
         alert("Registration Successful!");
     }
 
     return flag;
-    /*
-    if (!validName()) return false;
-    if (!validNum()) return false;
-    if (!validAge()) return false;
-    if (!validPW()) return false;
-    if (!validInt()) return false;
-    return true;
-    */
 }
 
 document.getElementById("dobBox").addEventListener("change", validAge);
@@ -164,4 +190,9 @@ document.getElementById("cpwBox").addEventListener("change", validPW);
 const boxes = document.getElementsByClassName("interest-cbox");
 for (let i = 0; i < boxes.length; i++) {
     boxes[i].addEventListener("change", validInt);
+}
+
+const selectBoxes = document.getElementsByClassName("selectE");
+for (let i = 0; i < selectBoxes.length; i++) {
+    selectBoxes[i].addEventListener("change", validSelect);
 }
